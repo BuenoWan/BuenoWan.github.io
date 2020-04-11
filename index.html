@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Wanderson Bueno</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href=".\imgs\img-Index\logo.png" type="image/png" sizes="16x16">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=American+Typewriter" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- ### CSS ### -->
+    <style rel="stylesheet" type="text/css">
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Poppins", sans-serif;
+            color: #777;
+        }
+        
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            position: relative;
+            opacity: 0.65;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .bgimg-1 {
+            background-image: url("./imgs/img-Index/bgTopo.jpg");
+            min-height: 100%;
+        }
+        
+        .bgimg-2 {
+            background-image: url("./imgs/img-Index/bg2.jpg");
+            min-height: 300px;
+        }
+        
+        .bgimg-3 {
+            background-image: url("./imgs/img-Index/bg3.jpg");
+            min-height: 250px;
+        }
+        
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+        
+        .caption span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+            width: 400px;
+        }
+        
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+        
+        h5 {
+            line-height: 1.6;
+        }
+        
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+        
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgba(168, 159, 159, 0.80);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        
+        #myBtn:hover {
+            background-color: #555;
+        }
+        
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+        
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+        
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+        
+        #avatar2 {
+            width: 100%;
+            height: 400px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        #sociais>a:link {
+            font-size: 22px;
+            color: black;
+            text-decoration: none;
+        }
+        
+        #bigToasty {
+            display: block;
+            height: 200px;
+            z-index: 4;
+            left: -50%;
+            -webkit-animation-duration: 5s;
+            /* Safari 4.0 - 8.0 */
+            -webkit-animation-iteration-count: 1;
+            /* Safari 4.0 - 8.0 */
+            animation-duration: 2s;
+            -webkit-animation-name: aparecerLeft;
+            /* Safari 4.0 - 8.0 */
+            animation-name: aparecerLeft;
+        }
+        
+        .sites {
+            width: 100px;
+            float: left;
+            margin-left: 1em;
+            text-align: justify;
+            cursor: pointer;
+        }
+        
+        .sites>a:link {
+            text-decoration: none;
+            color: #DDD;
+        }
+        
+        .sites>a:hover {
+            color: teal;
+        }
+        
+        .timeline {
+            list-style: none;
+            padding: 20px 0 20px;
+            position: relative;
+        }
+        
+        .timeline:before {
+            top: 0;
+            bottom: 0;
+            position: absolute;
+            content: " ";
+            width: 3px;
+            background-color: #eeeeee;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        
+        .timeline>li {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .timeline>li:before,
+        .timeline>li:after {
+            content: " ";
+            display: table;
+        }
+        
+        .timeline>li:after {
+            clear: both;
+        }
+        
+        .timeline>li:before,
+        .timeline>li:after {
+            content: " ";
+            display: table;
+        }
+        
+        .timeline>li:after {
+            clear: both;
+        }
+        
+        .timeline>li>.timeline-panel {
+            width: 46%;
+            float: left;
+            border: 1px solid #d4d4d4;
+            border-radius: 2px;
+            padding: 20px;
+            position: relative;
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            text-align: justify;
+        }
+        
+        .timeline>li>.timeline-panel:before {
+            position: absolute;
+            top: 26px;
+            right: -15px;
+            display: inline-block;
+            border-top: 15px solid transparent;
+            border-left: 15px solid #ccc;
+            border-right: 0 solid #ccc;
+            border-bottom: 15px solid transparent;
+            content: " ";
+        }
+        
+        .timeline>li>.timeline-panel:after {
+            position: absolute;
+            top: 27px;
+            right: -14px;
+            display: inline-block;
+            border-top: 14px solid transparent;
+            border-left: 14px solid #fff;
+            border-right: 0 solid #fff;
+            border-bottom: 14px solid transparent;
+            content: " ";
+        }
+        
+        .timeline>li>.timeline-badge {
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1.4em;
+            text-align: center;
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            margin-left: -25px;
+            z-index: 3;
+            border-top-right-radius: 50%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+            border-bottom-left-radius: 50%;
+        }
+        
+        .timeline>li.timeline-inverted>.timeline-panel {
+            float: right;
+        }
+        
+        .timeline>li.timeline-inverted>.timeline-panel:before {
+            border-left-width: 0;
+            border-right-width: 15px;
+            left: -15px;
+            right: auto;
+        }
+        
+        .timeline>li.timeline-inverted>.timeline-panel:after {
+            border-left-width: 0;
+            border-right-width: 14px;
+            left: -14px;
+            right: auto;
+        }
+        
+        .timeline-badge.treinamentos {
+            background-color: teal !important;
+        }
+        
+        .timeline-badge.cursos {
+            background-color: dodgerblue !important;
+        }
+        
+        .timeline-badge.trabalhos {
+            background-color: forestgreen !important;
+        }
+        
+        .timeline-badge.primary {
+            background-color: #2e6da4 !important;
+        }
+        
+        .timeline-badge.success {
+            background-color: #3f903f !important;
+        }
+        
+        .timeline-badge.warning {
+            background-color: #f0ad4e !important;
+        }
+        
+        .timeline-badge.danger {
+            background-color: #d9534f !important;
+        }
+        
+        .timeline-badge.info {
+            background-color: #5bc0de !important;
+        }
+        
+        .timeline-title {
+            margin-top: 0;
+            color: inherit;
+            line-height: 24px;
+        }
+        
+        .timeline-body>p,
+        .timeline-body>ul {
+            margin-bottom: 0;
+        }
+        
+        .timeline-body>p+p {
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 767px) {
+            ul.timeline:before {
+                left: 40px;
+            }
+            ul.timeline>li>.timeline-panel {
+                width: calc(100% - 90px);
+                width: -moz-calc(100% - 90px);
+                width: -webkit-calc(100% - 90px);
+            }
+            ul.timeline>li>.timeline-badge {
+                left: 15px;
+                margin-left: 0;
+                top: 16px;
+            }
+            ul.timeline>li>.timeline-panel {
+                float: right;
+            }
+            ul.timeline>li>.timeline-panel:before {
+                border-left-width: 0;
+                border-right-width: 15px;
+                left: -15px;
+                right: auto;
+            }
+            ul.timeline>li>.timeline-panel:after {
+                border-left-width: 0;
+                border-right-width: 14px;
+                left: -14px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR ====================================================================================================== -->
+    <!-- Navbar (Fixo no topo) -->
+
+
+    <div class="w3-top" style="color:white; z-index:4;">
+        <div class="nav navbar-nav" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="#home" class="w3-bar-item w3-button"> <i class="fa fa-home"></i> HOME</a>
+            <a href="#sobre" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> APRESENTAÇÃO</a>
+            <a href="#curriculo" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> CURRÍCULO</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTATO</a>
+        </div>
+        <!-- Navbar em tela pequena -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium" style="z-index:4">
+            <a href="#sobre" class="w3-bar-item w3-button" onclick="toggleFunction()">APRESENTAÇÃO</a>
+            <a href="#curriculo" class="w3-bar-item w3-button" onclick="toggleFunction()">CURRÍCULO</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTATO</a>
+        </div>
+    </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Home"><b><i class="fa fa-arrow-circle-up"></i> </b></button>
+
+    <div class="bgimg-1" id="home">
+        <!-- <br/><br/><pre>--- Em construção --- 03.10 17:20</pre> -->
+        <div class="caption">
+            <!--	<span class="border w3-hide-large w3-hide-medium" style="font-size: 15px;">WANDERSON BUENO<br/></span>  Tela pequena -->
+            <span class="border" style="font-size: 25px; text-shadow: black 0.1em 0.1em 0.2em; background-color: rgba(0, 0, 0, 0.40);"> WANDERSON BUENO <br/></span>
+            <!-- Tela grande -->
+            <div style="margin-top: 10px;">
+                <span style="font-size: 20px; text-align: justify; color:white; text-shadow: black 0.1em 0.1em 0.2em; " class="w3-animate-left">Apresentação Profissional</span>
+            </div>
+        </div>
+    </div>
+    <div style="color: #777;background-color:white;text-align:center;padding:15px 5px;text-align: justify;" id="sobre">
+        <h3 style="text-align:center; align-content: center; margin-bottom: -50px; color:rgb(0, 0, 0)"><b>SOBRE MIM</b></h3>
+    </div>
+
+    <!-- TELA GRANDE  -->
+    <div class="w3-content w3-container w3-hide-small">
+        <div class="w3-center w3-padding-large">
+            <img src="./imgs/img-Index/logo.png" class="w3-round w3-image" alt="Photo of Logo" width="500" height="333">
+        </div>
+        <p class="w3-justify w3-center" style="font: 400 16px/1.8 'Arial';" ;>
+            Meu nome é Wanderson Bueno Soares Lina, sou apaixonado pela tecnologia e suas respectivas inovações.<br> Fiz esse site para me apresentar melhor e mostrar um pouco do que sei fazer. Atuo na área de tecnologia há mais de 5 anos, comecei nesta
+            área com o desejo de criar novas soluções para empresas, focando em automação de processos, com sua devida implantação.<br> Minha primeira experiência foi lecionando (em estágio) após concluir um curso de informática, hoje após experiências
+            pessoais e profissionais, busco uma oportunidade para entrar na área de desenvolvimento e planejamento ou até mesmo na área de suporte.
+        </p>
+        <hr>
+    </div>
+    <!-- TELA Pequena  -->
+    <div class="w3-row w3-hide-large w3-hide-medium">
+        <div class="w3-col m6 w3-center w3-padding-large">
+            <img src="./imgs/img-Index/logo.png" class="w3-round w3-image" alt="Photo of Logo" width="500" height="333">
+        </div>
+        <div class="w3-col m6 w3-padding-large">
+            <p class="w3-justify">
+                Meu nome é Wanderson Bueno Soares Lina, sou apaixonado pela tecnologia e suas respectivas inovações.<br> Fiz esse site para me apresentar melhor e mostrar um pouco do que sei fazer. Atuo na área de tecnologia há mais de 5 anos, comecei
+                nesta área com o desejo de criar novas soluções para empresas, focando em automação de processos, com sua devida implantação.<br> Minha primeira experiência foi lecionando (em estágio) após concluir um curso de informática, hoje após experiências
+                pessoais e profissionais, busco uma oportunidade para entrar na área de desenvolvimento e planejamento ou até mesmo na área de suporte.
+            </p>
+        </div>
+    </div>
+
+    <!-- TALENTOS -->
+    <div class="w3-content w3-container">
+        <p class="w3-large w3-center w3-padding-16">Minhas melhores habilidades e qualidades:</p>
+        <p class="w3-wide"><i class="fa fa-puzzle-piece"></i>Criatividade</p>
+        <div class="w3-light-grey w3-margin-bottom">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:99%">99%</div>
+        </div>
+        <p class="w3-wide"><i class="fa fa-laptop"></i>Suporte</p>
+        <div class="w3-light-grey w3-margin-bottom">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:95%">95%</div>
+        </div>
+        <p class="w3-wide"><i class="fa fa-lightbulb-o"></i>Desenvolvimento de Soluções</p>
+        <div class="w3-light-grey">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+        </div>
+    </div>
+
+    <br/><br/>
+
+    <!-- PARALLAX 2 ================================================================================================== -->
+    <div class="bgimg-2">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;">DADOS PROFISSIONAIS</span>
+        </div>
+    </div>
+
+    <!-- Container =================================================================================================== -->
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:20px 30px;text-align: center;">
+            <p>Atuo na área de Tecnologia há mais de 5 anos. Trabalhando com Suporte e Desenvolvimento de Sistemas.</p>
+        </div>
+    </div>
+
+    <!-- Container (Sessão CURRICULO) ================================================================================ -->
+
+    <!-- Conteúdo do CV -->
+    <div class="w3-content w3-light-grey" style="max-width:1400px;" id="curriculo">
+        <br>
+        <!-- Dividir a GRID -->
+        <div class="w3-row-padding">
+
+            <!-- Coluna ESQUERDA -->
+            <div class="w3-third">
+
+                <!-- FOTO AVATAR -->
+                <div class="w3-white w3-text-grey w3-card-4">
+                    <div class="w3-display-container">
+                        <div style="padding: 50px;">
+                            <img src="./imgs/img-Index/avatar.jpeg" style="width:100%;" alt="Avatar">
+                        </div>
+                        <h2 style="color:gray; text-align: center; margin-top: -20px"><b>Wanderson Bueno, 26</b></h2>
+
+                    </div>
+                    <hr>
+                    <!-- Contatos -->
+                    <div class="w3-container" style="margin-top: 30px;">
+                        <p>
+                            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-blue"></i>Web Developer / Programador</p>
+                            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Barrinha, SP</p>
+                            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>wanbuen@gmail.com</p>
+                            <p><i class="fab fa-skype fa-fw w3-margin-right w3-large w3-text-blue"></i>wanbuen@gmail.com</p>
+                            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>+55 (16) 9 9391-8758</p>
+                        </p>
+                        <hr>
+                        <!-- Conhecimentos -->
+                        <p class="w3-large"><b><i class="fas fa-id-card w3-margin-right w3-text-blue"></i>Conhecimentos</b></p>
+
+                        <p>Suporte / Sistemas / Windows</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:95%">95%</div>
+                        </div>
+
+                        <p>Suporte / Infraestrutura / Monitoramento</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:80%">80%</div>
+                        </div>
+
+                        <p>Análise de Sistemas</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:75%">75%</div>
+                        </div>
+
+                        <p>Web Designer</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:95%">95%</div>
+                        </div>
+
+                        <!-- Progamação -->
+
+                        <hr style="margin-top: 30px;">
+                        <p class="w3-large"><b><i class="fa fa-code fa-fw w3-margin-right w3-text-blue"></i>Desenvolvimento</b></p>
+
+                        <p>HTML5 / CSS3</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:85%">85%</div>
+                        </div>
+
+                        <p>Javascript</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:65%">65%</div>
+                        </div>
+                        <p>SQL</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:80%;">80%</div>
+                        </div>
+
+                        <p>Clojure</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:50%">50%</div>
+                        </div>
+
+                        <p>Python</p>
+                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                            <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:30%">30%</div>
+                        </div>
+
+                        <hr style="margin-top: 30px;">
+
+                        <!-- Idiomas -->
+                        <p class="w3-large w3-text-theme"><b><i class="fas fa-globe-americas w3-margin-right w3-text-blue"></i>Idiomas</b></p>
+                        <p style="margin-bottom:-1px;">Português Brasileiro<br/>
+                            <div class="w3-light-grey w3-round-xlarge">
+                                <div class="w3-round-xlarge w3-blue" style="height:20px;width:100%"></div>
+                            </div>
+                        </p>
+                        <p style="margin-bottom:-1px;">Inglês<br/>
+                            <div class="w3-light-grey w3-round-xlarge">
+                                <div class="w3-round-xlarge w3-blue" style="height:20px;width:55%"></div>
+                            </div>
+                        </p>
+                        <p style="margin-bottom:-1px;">Espanhol<br/>
+                            <div class="w3-light-grey w3-round-xlarge">
+                                <div class="w3-round-xlarge w3-blue" style="height:20px;width:25%"></div>
+                            </div>
+                            <br>
+                        </p>
+                        <hr>
+                        <!-- ============================================================================================================= -->
+                        <!-- DOWNLOAD DO CURRICULO ======================================================================================= -->
+                        <!---<div class="w3-content  w3-light-grey" style="max-width:300px;"> --->
+                        <div style="text-align: center;">
+                            <a href="https://docs.google.com/viewer?url=https://github.com/BuenoWan/BuenoWan.github.io/raw/master/imgs/img-Index/cv-wanderson.pdf" TARGET="_blank">
+                                <p class="w3-large w3-text-theme"><b><i class="fas fa-share-square w3-margin-right w3-text-blue"></i>Download Currículo</b></p>
+                            </a>
+
+                        </div>
+                        <!-- FIM DO DOWNLOAD DO CURRICULO -->
+
+                    </div>
+                </div><br/>
+                <!-- FIM DA COLUNA ESQUERDA -->
+            </div>
+
+            <!-- COLUNA DA DIREITA -->
+            <div class="w3-twothird">
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <!-- Empregos Anteriores -->
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Experiência Profissional</h2>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>RBC - Tecnolgia<br/><i>Desenvolvedor Web. Júnior</i></b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Ago 2019 – Nov 2019
+                            <!-- <span class="w3-tag w3-teal w3-round">Atual</span> --></h6>
+                        <p> Principais atividades: Migração de sistema ERP para Web. <br> Tecnologias: HTML5, CSS3, Angular 8 e SQL.  Metodologias: Scrum.</p>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>CD2 - Equipamentos Industriais<br/><i>Analista de Suporte/Infra</i></b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i> Abr 2018 – Jun 2019</h6>
+                        <p> Suporte de níveis 1 e 2 à usuários de produtos Microsoft (Windows, Office, Windows Server e Sistema ERP). <br>Suporte Suporte em infraestrutura. <br> Tecnologias: SQL, Windows Server e Sistema Windows. <br>Metodologias: Scrum.
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>iDtrust<br/><i>Desenvolvedor Trainee</i></b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Ago 2017 – Mar 2018</h6>
+                        <p> Principais atividades: Desenvolvimento BACK-END e FRONT-END à nível Trainee.
+                            <br>Tecnologias: HTML, Javascript, Java, Clojure e SQL.
+                            <br>Metodologias: Scrum.
+                        </p>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Companhia Paulista de Força e Luz (CPFL)<br/><i>Suporte ao Cliente</i></b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Mar 2015 – Dez 2016</h6>
+                        <p> Principais atividades: Atendimento ao cliente presencial, por telefone e por suporte remoto. Registro de serviços e solicitações referidos à empresa/consolidações de banco de dados. <br> Tecnologias: SQL e ERP.
+                        </p><br>
+                    </div>
+                    <hr>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>Prefeitura / Câmara Municipal de Barrinha<br/><i>Estágio em T.I</i></b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Jan 2013 – Dez 2014</h6>
+                        <p> Principais atividades: Manutenção de micros, manutenção no site da Câmara Municipal e lecionava aula nas escolas de ensino PEB I.  <br> Tecnologias: HTML, CSS, Windows Server e Windows.
+                        </p><br>
+                    </div>
+
+                </div>
+
+
+                <div class="w3-container w3-card w3-white w3-margin-bottom">
+                    <!-- EDUCAÇÃO -->
+                    <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-university fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Estudos</h2>
+                    <div class="w3-container">
+                        <p style="margin: 0 -10px 10px; font-size:18px;"><b><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-text-blue" style="font-size:20px;"></i><span class="w3-opacity">Graduação</span></b></p>
+                        <h5 class="w3-opacity"><b>Bacharel em Ciência da Computação - Universidade Paulsita (UNIP)</b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Dez 2019 </h6>
+                        <hr>
+                    </div>
+                    <div class="w3-container">
+                        <p style="margin: 0 -10px 10px; font-size:18px;"><b><i class="fas fa-award w3-margin-right w3-text-blue" style="font-size:20px;"></i><span class="w3-opacity">Cursos & Certificações</span></b></p>
+                    </div>
+                    <div class="w3-container" style="margin-top: -10px;">
+                        <h5 class="w3-opacity"><b>• Treinamento em Desenvolvimento em Aplicações MVC com .Net CORE - Midas Solutions</b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Fev 2020</h6>
+                        <p>Treinamento disponibilizado pela empresa Midas Solutions.</p>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>• Desenvolvimento em Aplicações Web -  Udemy</b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Fev 2020</h6>
+                        <p>Curso para desenvolvimento Web com projetos. </p>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>• Montagem e Manutenção de Micros/Operador de Computador/Web Design - Microlins</b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Jul 2013</h6>
+                    </div>
+                    <div class="w3-container">
+                        <h5 class="w3-opacity"><b>• Língua Inglesa Nível II - Centro de Línguas - Barrinha</b></h5>
+                        <h6 class="w3-text-blue"><i class="far fa-calendar-alt fa-fw w3-margin-right"></i>Out 2012</h6>
+                    </div>
+                </div>
+            </div>
+            <!-- FIM DA COLUNA DIREITA -->
+        </div>
+        <!-- FIM DA GRID -->
+    </div>
+    <!-- ============================================================================================================= -->
+    <!-- TIMELINE  =================================================================================================== -->
+    <div class="w3-light-grey">
+        <div class="container w3-card w3-margin-bottom w3-white">
+            <div class="page-header">
+                <h1 id="timeline" style="text-align: center;">Minha Timeline</h1>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-badge treinamentos"><i class="fa fa-cogs"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Treinamento em Desenvolvimento - MVC com .NET Core</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Fevereiro de 2020</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Treinamento disponibilizado pela empresa Midas Solutions para desenvolvimento de modelagem MVC com .NET Core (<i>Robotic Process Automation</i>) </p>
+                            <p> <small class="text-muted">Treinamento com Certificado.</small></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-badge cursos"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Udemy <br><em>Curso de Desenvolvimento em Aplicações Web</em></h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Feveiro de 2020
+                                <span class="w3-tag w3-green w3-round" style="margin-left: 3px;">Atual</span></p></small>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Curso de Desenvolvimento em Aplicações Web com HTML5, CSS3, Javascript e SQL.</p>
+                            <p> <small class="text-muted">Curso com Certificado.</small></p>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="timeline-badge treinamentos"><i class="fas fa-user-graduate"></i></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Graduação - Ciência da Computação</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Dezembro de 2019</p>
+							</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Em 2013 com desconto gerais, me ingressei para estudar na Universidade Paulista (UNIP).<br> Tranquei a matrícula em 2015 e voltei em 2017. <br> É minha formação atual.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline-inverted">
+                    <div class="timeline-badge danger"><i class="far fa-flag"></i> </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Trabalho: RBC - Tecnologia</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Agosto de 2019 – Novembro 2019 <!-- <span class="w3-tag w3-teal w3-round">Atual</span> --></small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Em Agosto de 2019, fui contratado pela Ribercred, para atuar pela empresa de tecnologia (RBC) como desenvolvedor Web Júnior de forma temporária.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge danger"><i class="far fa-flag"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Trabalho: CD2 - Equipamentos</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Abril de 2018 – Julho de 2019</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Contratado como Analista de Suporte Tecnico I para clientes Microsoft por meio telefônico, acesso remoto e atendimento físico.<br> Após 6 meses, fui promovido à Analista de Suporte II, realizando procedimentos de key-loger.
+                                <br>Após 3 meses, foi me adicionado também o cargo de Analista de Suporte em Infraestrutura.</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="timeline-inverted">
+                    <div class="timeline-badge warning"><i class="fas fa-fire-extinguisher"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">iDtrust<br/>Desenvolvedor Trainee</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Agosto de 2017 – Março de 2019</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Em 2017 atuei como Trainee na empresa iDtrust durante nove meses.<br/> Foi assinado como estágio, após o encerramento de horas, me desliguei da empresa.
+                            </p>
+                            <small class="text-muted">Contém registro como estágio na carteira.</small>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge trabalhos"><i class="fas fa-glasses"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Trabalho: Serviços NET de Telecomunicações</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Abril de 2017 – Agosto de 2017</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Contratado como BACKOFFICE para trabalhos de Suporte ao Cliente, porém fiquei somente até a base de treinamento, pois, precisava cumprir horas de estágio.</p>
+                            <small class="text-muted">Período de experiência.</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-badge danger"><i class="far fa-flag"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Trabalho: Companhia Paulista de Força e Luz (CPFL)</h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Março 2015 – Dezembro de 2016</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Contratado como Suporte de Atendimento. Como a empresa decidiu separar os atendimentos por região e filtrar as informações, passei a exercer a função de Auxiliar de Dados e Consultas, juntamente à anterior.
+                                <br>Devido os horários que comprometiam meus estudos (até então pausados), decidi sair da agência, para voltar realmente à área.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge info"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Estágio Extra Curricular<br/><em>Professor de Informática / Técnico</em></h4>
+                            <p><small class="text-muted"><i class="far fa-calendar-alt w3-text-teal"></i> Janeiro de 2013 – Dezembro de 2014</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p> Enquanto eu estudava na Microlins, estagiava na Prefeitura Municipal de Barrinha, no período da tarde eu lecionava informática nas escolas públicas. Dava mautenção nos micros gerais, contando servidor e máquina de uso comum.<br>                                Na Câmara Municipal, eu dava manutenção no servidor e no site público.
+                                <p> <small class="text-muted">Curso com Certificado.</small></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <br/>
+    </div>
+    <!-- ============================================================================================================= -->
+    <!-- ENTRE EM CONTATO (Sessão Contato) =========================================================================== -->
+    <div class="bgimg-3" id="contact">
+
+        <!-- Container (Contact Section) -->
+        <div class=" w3-container w3-center  w3-padding-48 w3-center" style=" background-color: rgba(0, 0, 0, 0.46);color: #eee; height: 250px;">
+            <h3 style="color: white;">ENTRE EM CONTATO!</h3>
+            <i class="fas fa-map-marker-alt fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i><a href="https://www.google.com/maps/dir//Barrinha,+SP,+14860-000/@-21.1913242,-48.1779092,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x94b9738959f4b213:0xb8fc6d62d3bd141d!2m2!1d-48.1594295!2d-21.1942185"
+                TARGET="_blank" style="font-size: 18px; color:white"> Barrinha, SP</a><br>
+            <i class="glyphicon glyphicon-phone-alt fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <a href="https://api.whatsapp.com/send?phone=5516993918758&text=Ol%C3%A1%21%20Tudo%20bem%3f%20Quero%20conhecer%20mais%20seus%20servi%C3%A7os...&source=&data="
+                style="font-size: 18px; color:white">(16) 9 9391-8758</a><br>
+            <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>
+            <a href="mailto:wanbuen@gmail.com" style="font-size: 18px; color:white">wanbuen@gmail.com</a>
+        </div>
+    </div>
+    </div>
+    <!-- ============================================================================================================= -->
+    <!-- FOOTER ====================================================================================================== -->
+    <footer class="w3-container w3-black w3-center w3-justify">
+        <br>
+        <p id="sociais">
+            <a href="https://www.facebook.com/wanderson.bueno.9" TARGET="_blank"><i class="fab fa-facebook-square w3-hover-opacity" style="color: whitesmoke;"></i></a>
+            <a href="https://www.instagram.com/wanbsl" TARGET="_blank"><i class="fab fa-instagram w3-hover-opacity" style="color: whitesmoke;"></i></a>
+            <a href="https://github.com/buenowan" TARGET="_blank"><i class="fab fa-github w3-hover-opacity" style="color: whitesmoke;"></i></a>
+            <a href="https://www.linkedin.com/in/wanderson-bueno-soares-lina-426346146/" TARGET="_blank"><i class="fab fa-linkedin-in w3-hover-opacity" style="color: whitesmoke;"></i></a>
+        </p>
+
+        <div>
+            <script>
+                now = new Date
+                document.write("Todos os direitos reservados. © " + now.getFullYear())
+            </script>
+
+        </div>
+    </footer>
+    <!-- ============================================================================================================= -->
+    <!-- SCRIPTS ===================================================================================================== -->
+    <script>
+        // 	MENU ========================================================================================================= -->
+        // Change style of navbar on scroll and btn toTop
+
+        var mybutton = document.getElementById("myBtn");
+
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+                mybutton.style.display = "block";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+                mybutton.style.display = "none";
+            }
+        }
+
+        // used to jump page actual to top
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+</body>
+
+</html>
